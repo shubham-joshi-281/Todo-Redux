@@ -10,16 +10,32 @@ const Todo = () => {
     return alert("Todo Is Removed ");
   };
   return (
-    <section className="show-todo">
-      {todos?.map((ele, index) => {
-        return (
-          <div key={index} className="todo">
-            <p>{ele.text}</p>
-            <button onClick={() => removeTodoHandler(ele.id)}>Remove</button>
-          </div>
-        );
-      })}
-    </section>
+    <>
+      {todos?.length <= 0 ? (
+        <section className="show-todo">
+          {todos?.map((ele, index) => {
+            return (
+              <div key={index} className="todo">
+                <p>{ele.text}</p>
+                <button onClick={() => removeTodoHandler(ele.id)}>
+                  Remove
+                </button>
+              </div>
+            );
+          })}
+        </section>
+      ) : (
+        <h1
+          style={{
+            textAlign: "center",
+            padding: "2rem",
+            backgroundColor: "#aaa",
+          }}
+        >
+          No Task To Display
+        </h1>
+      )}
+    </>
   );
 };
 
