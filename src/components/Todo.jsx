@@ -11,7 +11,7 @@ const Todo = () => {
   };
   return (
     <>
-      {todos?.length <= 0 ? (
+      {!todos?.length <= 0 ? (
         <section className="show-todo">
           {todos?.map((ele, index) => {
             return (
